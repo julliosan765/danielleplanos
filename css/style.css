@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --marinho: #0b3b36;
+  --marinho-claro: #2f6f5e;
+  --areia: #f5f1e8;
+  --dourado: #d9a441;
+  --verde-zap: #25d366;
+  --texto: #16231f;
+  --texto-suave: #52625b;
+  --branco: #ffffff;
+  --borda: #e1dbc9;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  color: var(--texto);
+  line-height: 1.7;
+  background: var(--branco);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+h1, h2, h3, .logo {
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+}
+
+.onda-divisor {
+  height: 28px;
+  background: var(--areia);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 20'%3E%3Cpath d='M0 10 Q 15 0, 30 10 T 60 10 T 90 10 T 120 10' fill='none' stroke='%230b3b36' stroke-width='1.4' opacity='0.25'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 120px 20px;
+  background-position: center;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+header {
+  background: var(--branco);
+  border-bottom: 1px solid var(--borda);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 21px;
+  color: var(--marinho);
+  letter-spacing: 0.2px;
+}
+
+nav ul {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  font-weight: 500;
+  color: var(--texto);
+  transition: color 0.2s;
+}
+
+nav a:hover, nav a.ativo {
+  color: var(--marinho);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--marinho);
+}
+
+/* Hero */
+.hero {
+  background: var(--marinho);
+  padding: 88px 24px 72px;
+  text-align: center;
+  position: relative;
+}
+
+.hero .destaque {
+  font-style: italic;
+  color: var(--dourado);
+}
+
+.eyebrow {
+  color: var(--dourado);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(24px, 5.5vw, 38px);
+  line-height: 1.25;
+  color: var(--branco);
+  margin-bottom: 18px;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero p {
+  font-size: clamp(15px, 2.5vw, 18px);
+  color: #cfe0d8;
+  max-width: 560px;
+  margin: 0 auto 36px auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 34px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.btn:hover { transform: translateY(-1px); opacity: 0.92; }
+
+.btn-primario {
+  background: var(--dourado);
+  color: var(--marinho);
+}
+
+.btn-whatsapp {
+  background: var(--verde-zap);
+  color: var(--branco);
+}
+
+/* Seções gerais */
+section {
+  padding: 72px 24px;
+}
+
+section h2 {
+  font-size: clamp(22px, 4vw, 30px);
+  color: var(--marinho);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.subtitulo {
+  text-align: center;
+  color: var(--texto-suave);
+  max-width: 560px;
+  margin: 0 auto 44px auto;
+  font-size: 16px;
+}
+
+/* Cards de benefícios */
+.beneficios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-top: 3px solid var(--marinho-claro);
+  border-radius: 4px;
+  padding: 30px 26px;
+  text-align: center;
+  transition: transform 0.15s;
+}
+
+.card:hover { transform: translateY(-3px); }
+
+.card .icone {
+  font-size: 30px;
+  margin-bottom: 14px;
+}
+
+.card h3 {
+  color: var(--marinho);
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+
+.card p {
+  color: var(--texto-suave);
+  font-size: 15px;
+}
+
+/* Planos */
+.planos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.plano-card {
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: 28px;
+  background: var(--branco);
+}
+
+.plano-card h3 {
+  color: var(--marinho);
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.plano-card .operadora {
+  color: var(--texto-suave);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.plano-card ul {
+  margin-bottom: 20px;
+}
+
+.plano-card li {
+  padding: 6px 0;
+  font-size: 14px;
+  border-bottom: 1px solid var(--borda);
+}
+
+.plano-card li:last-child { border-bottom: none; }
+
+/* Formulário */
+.form-cotacao {
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--areia);
+  padding: 44px;
+  border-radius: 4px;
+  border-top: 3px solid var(--dourado);
+}
+
+.campo {
+  margin-bottom: 18px;
+}
+
+.campo label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: var(--marinho);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--borda);
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: inherit;
+  background: var(--branco);
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--marinho-claro);
+}
+
+.form-cotacao button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* Sobre */
+.sobre-conteudo {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--texto-suave);
+  font-size: 16px;
+}
+
+.sobre-conteudo p { margin-bottom: 16px; }
+
+/* Contato */
+.contato-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contato-item {
+  text-align: center;
+  padding: 24px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+}
+
+.contato-item .icone { font-size: 28px; margin-bottom: 10px; }
+.contato-item h3 { color: var(--marinho); font-size: 16px; margin-bottom: 6px; }
+.contato-item p { color: var(--texto-suave); font-size: 14px; }
+
+/* WhatsApp flutuante */
+.whatsapp-flutuante {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--verde-zap);
+  color: var(--branco);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 200;
+  transition: transform 0.2s;
+}
+
+.whatsapp-flutuante:hover {
+  transform: scale(1.08);
+}
+
+.whatsapp-flutuante svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* Footer */
+footer {
+  background: var(--marinho);
+  color: var(--branco);
+  text-align: center;
+  padding: 28px 24px;
+  font-size: 14px;
+}
+
+/* ===== Responsivo ===== */
+
+/* Tablets e notebooks pequenos (1024px e abaixo) */
+@media (max-width: 1024px) {
+  section { padding: 56px 20px; }
+}
+
+/* Tablets e celulares grandes (768px e abaixo) */
+@media (max-width: 768px) {
+  nav { display: none; }
+  .menu-toggle { display: block; }
+
+  nav.aberto {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+    padding: 16px 24px;
+  }
+
+  nav.aberto ul {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hero { padding: 64px 20px 52px; }
+  .beneficios { grid-template-columns: 1fr; }
+  .contato-grid { grid-template-columns: 1fr; }
+  .planos-grid { grid-template-columns: 1fr; }
+  .form-cotacao { padding: 28px 22px; }
+  .header-inner { padding: 14px 20px; }
+  section { padding: 48px 18px; }
+}
+
+/* Celulares pequenos (480px e abaixo) */
+@media (max-width: 480px) {
+  .logo { font-size: 18px; }
+  .eyebrow { font-size: 11px; letter-spacing: 1px; }
+  .hero p { max-width: 100%; }
+  .btn { padding: 13px 26px; font-size: 14px; width: 100%; text-align: center; }
+  .card { padding: 24px 20px; }
+  .form-cotacao { padding: 20px 16px; }
+  .whatsapp-flutuante {
+    width: 50px;
+    height: 50px;
+    bottom: 16px;
+    right: 16px;
+  }
+  .whatsapp-flutuante svg { width: 24px; height: 24px; }
+}
+
+/* Celulares muito pequenos / telas antigas (360px e abaixo) */
+@media (max-width: 360px) {
+  .header-inner { padding: 12px 14px; }
+  .logo { font-size: 16px; }
+  section, .hero { padding-left: 14px; padding-right: 14px; }
+  .card, .plano-card, .contato-item { padding: 18px; }
+  .campo input, .campo select, .campo textarea { padding: 10px 12px; font-size: 14px; }
+}
+
+/* Telas grandes (1400px e acima) - evita esticar demais */
+@media (min-width: 1400px) {
+  .container, .header-inner, .beneficios, .planos-grid, .contato-grid {
+    max-width: 1240px;
+  }
+}
